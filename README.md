@@ -7,11 +7,13 @@ $uz = new UnzipMe('httpd-2.4.25-win32-VC14.zip');
 
 $uz->on_next = function($file, $count) use ($uz)
 {
+
 	?>
 	<script>
 		parent.update('Unzipping <?= $file; ?>', <?= round($count/$uz->file_count*100); ?>);
 	</script>
 	<?php
+	
 };
 
 $uz->unzip($dest", ["strip"=>1, "matches"=>['`/manual/`', '`/include/`', '`.txt$`']]);
@@ -24,11 +26,13 @@ $uz = new UnzipMe('php-5.6.30-nts-Win32-VC11-x64.zip');
 
 $uz->on_next = function($file, $count) use ($uz)
 {
+
 	?>
 	<script>
 		parent.update('Unzipping <?= $file; ?>', <?= round($count/$uz->file_count*100); ?>);
 	</script>
 	<?php
+	
 };
 
 $uz->unzip($dest", ["matches"=>['`.dll$`', '`.exe$`'], "match_excludes"=>false]);
